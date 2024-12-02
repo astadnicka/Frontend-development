@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+<body>
+    <h1>Pokédex</h1>
+    <div class="container">
+        <div class="search">
+            <input type="text" id="searchInput" placeholder="Wyszukaj pokemona ૮₍'｡ᵔ ꈊ ᵔ｡`₎ა">
+            <button onclick="searchPokemon()">Szukaj</button>
+
+        </div>
+        <div id="loading" class="hidden pikachu">
+            <img src="pikachu-running.gif" alt="" srcset="" height="60px">
+            <p>Ładowanie...</p>
+        </div>
+
+        <div class="pokemony">
+            <section class="listaPokemonow">
+                <h2>Lista Pokémonów</h2>
+                <ul id="pokemonList"></ul>
+            </section>
+            <section class="dane">
+                <h2>Szczegóły Pokémona</h2>
+                <div id="danePokemona">
+                    <p>Wybierz Pokémona, aby zobaczyć szczegóły.</p>
+                </div>
+            </section>
+        </div>
+        
+    </div>
+
+
+    <script src="app.js"></script>
+    
+    <p>Choose your fighter</p>
+    <div class="content">
+        <div class="cardcontainer">
+            <p>mewtwo</p>
+            <div class="box">
+                <img src="mewtwo.png" alt="mew">
+                
+            </div> 
+            
+            <div class="card mew"></div>
+        </div>
+        <div class="cardcontainer" >
+            <p>charizard</p>
+            <div class="box">
+                <img src="charizard.png" alt="char">
+                
+            </div> 
+            
+            <div class="card char" ></div>
+        </div>
+        <div class="cardcontainer" >
+            <p>articuno</p>
+            <div class="box">
+                <img src="articuno.png" alt="art">
+                
+            </div> 
+            
+            <div class="card art" ></div>
+        </div>
+    </div>
+</body>
+</html>
