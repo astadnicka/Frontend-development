@@ -1,0 +1,220 @@
+@font-face {
+    font-family: Pokemon;
+    src: url(Pokemon_Solid.ttf);
+}
+
+body {
+    h2{
+        font-size: 30px;
+    }
+    letter-spacing: 2px;
+
+    background-image: url('galaxy5.jpg');
+    background-size:auto;
+    color:#fff;
+    font-family: Pokemon;
+    text-align: center;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    h1{
+        margin: auto;
+        color:red;
+        text-align: center;
+        animation:5s linear infinite rotate;
+        font-size:100px;
+        text-shadow: 1-0px 10px rgb(29, 29, 156);
+    }
+    @keyframes rotate{
+        
+        0% {
+            color:red
+        }
+        25%{
+            color:orange
+        }
+        50% {
+            color:yellow
+
+        }
+        75%{
+            color:orange
+        }
+        100%{
+            color:red
+        }
+    }
+    #app{
+        #main{
+            margin:auto;
+            width:100%;
+            .search{
+                border-radius: 10px;
+                padding:10px;
+                width:200px;
+                border:10px solid rgb(29, 29, 156);
+                box-shadow: inset 0 0 3px 0px rgb(77, 77, 214);
+            }
+            #container{
+                text-shadow: 1px 1px black;
+                margin:auto;
+                width:100%;
+                #loading{
+                    margin:20px 0;
+
+                    
+                }
+                #listy{
+                    display: flex;
+                    justify-content: center;
+                    gap:300px;
+                    #pokemonList{
+                        padding:0;
+                        li{
+                            width:300px;
+                            display: flex;
+                            justify-items: center;
+                            justify-content: left;
+                            gap:10px;
+                            img {
+                                height: 100px; 
+                            }
+                            p{
+                                text-align: center;
+                                padding:10px;
+                            }
+                        }
+                        li:hover{
+                            background: rgba(69, 82, 84, 0.5);
+                            cursor: pointer;
+                        }
+                        }
+                    }
+                    #danePokemona{
+                        width: 300px;
+                    }
+                    #detailsPlaceholder{
+                        width: 300px;
+                    }
+                }
+               
+            }
+        }
+        margin:auto;
+        width:100%;
+        
+    }
+    
+    .content {
+        padding-bottom:100px;
+        display: flex;
+        gap:100px;
+        justify-content: center;
+        .cardcontainer {
+            cursor: pointer;
+            height:100%px;
+            width: 200px;
+            perspective: 700px;
+            transition: box-shadow 0.3s;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            &:hover{
+                box-shadow: 0px 80px 15px -10px rgba(0, 0, 0, 0.5);
+                .box {
+                    opacity: 1;
+                    transform: translateY(-65px);
+                    filter: drop-shadow(-1px 4px 5px rgba(0, 0, 0, 0.7)); 
+                }
+                .card{
+                    transform: rotateX(40deg);
+                    filter:brightness(40%);
+                    box-shadow:inset 0px 20px 20px 10px rgba(0, 0, 0, 0.4), 0px 0px 20px -4px rgba(0, 0, 0, 0.6);
+                   
+                }
+                p{
+                    transform: translateY(-45px);
+                    font-size: 30px;
+                    color:rgb(244, 221, 221);
+                    text-shadow: 0 0 20px red;
+    
+                }
+                   
+            }
+            p{
+                z-index: 2;
+                transition: transform 0.4s, font-size 0.4s, color 0.4s;
+                position:absolute;
+                top:230px;
+                color:#99a4a9;
+                text-shadow: 2px 2px 5px black;
+                font-size: 25px;
+                text-align: center;
+                font-family: Jedi;
+            
+    
+            }
+            .box{
+                display: flex;
+                justify-content: center;
+                pointer-events: none;
+                z-index: 1;
+                position: absolute;
+                height: 300px;
+                opacity: 0;
+                transition: opacity 0.4s, visibility 0.4s, transform 0.4s;
+                img{
+                    margin: -70px auto;
+                    position: relative;
+                    
+                };
+                img[alt="mew"] {
+                    height: 360px;
+                    filter:drop-shadow(5px 0 10px rgb(101, 180, 216));
+
+                 
+                }
+                
+
+                img[alt="char"] {
+                    height: 310px;
+                    margin:-47px 70px 0 90px;
+                    filter:drop-shadow(0px -2px 20px red)
+    
+                }
+                img[alt="art"] {
+                    height: 280px;
+                    margin:-60px 20px 0 40px;
+                    filter:drop-shadow(0 0 10px rgb(221, 238, 238))
+    
+                }
+            
+            }
+    
+    
+            .card {
+                border-radius: 6px;
+                height: 300px;
+                width: 200px;
+                transition: transform 0.4s, filter 0.4s, box-shadow 0.4s;
+                
+             }
+             .mew {
+                background-image: url('mewtwo_card.jpg');
+                background-size:cover;
+                background-position: 30%;
+             }
+             .char {
+                background-image: url('charizard_card.png');
+                background-size:cover;
+                background-position: 55% ;
+             
+             }
+             .art {
+                background-image: url('articuno_card.jpg');
+                background-size:cover;
+                background-position: 45% ;
+             
+             }
+            
+    
+        }
+    }
