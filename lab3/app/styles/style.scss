@@ -1,0 +1,134 @@
+@font-face {
+    font-family: Pokemon;
+    src: url(Pokemon_Solid.ttf);
+}
+
+body {
+    a{
+        color:white;
+    }
+    margin: 0;
+    letter-spacing: 2px;
+    color:white;
+
+    background-image: url('galaxy5.jpg');
+    background-size:auto;
+    font-family: Pokemon;
+    nav{
+        height: 80px;
+        justify-items: center;
+        justify-content: space-around;
+        display: flex;
+        background: rgb(43, 32, 92);
+        a{
+            color:white;
+            text-align: center;
+            line-height: 80px;
+        }
+        h1{
+            animation: rotate 5s linear infinite;
+            margin:0;
+
+        }
+    }
+    main {
+        width: 100%;
+        margin-top: 40px;
+        p{
+            text-align: center;
+            color:white;
+            font-size: 30px;
+        }
+        #filter{
+            width: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            margin:40 0;
+            *{
+                padding: 10px;
+                border:10px solid rgb(43, 32, 92);
+            }
+
+            
+        }
+        ul{
+            padding:0;
+            width: 100%;
+            li{
+                display: flex;
+                justify-content: space-around;
+                margin:0 20px;
+                *{
+                    line-height: 100px;
+                    
+                }
+             
+            }
+            li:hover{
+                background-color:rgba(83, 70, 70, 0.4);
+            }
+        }
+        #detailedPokemon{
+            margin:0 auto;
+            width: 100%;
+            h2{
+                text-align: center;
+            }
+           #img{
+            width: 100%;
+            margin:0 auto;
+            display: flex;
+            justify-content: center;
+            img{
+                width: 300px;
+            }
+           }
+           #short{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            a{
+                text-align: center;
+            }
+           }
+           #buttons{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+           }
+        }
+        #details{
+            margin-bottom: 100px;
+            p{
+                font-size: 20px;
+            }
+        }
+       
+    }
+    #footer{
+        position: fixed;
+        width: 100%;
+        bottom:0px;
+    }
+    @keyframes rotate{
+        
+        0% {
+            color:red
+        }
+        25%{
+            color:orange
+        }
+        50% {
+            color:yellow
+
+        }
+        75%{
+            color:orange
+        }
+        100%{
+            color:red
+        }
+    }
+   
+}
