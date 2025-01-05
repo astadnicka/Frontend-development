@@ -2,9 +2,10 @@ import PokemonList from "../components/PokemonList";
 import Filter from "../components/Filter";
 
 export default async function PokemonPage({ searchParams }) {
-  const search = searchParams?.search || "";
-  const limit = parseInt(searchParams?.limit, 10) || 20; // Domyślna wartość to 20
-  const type = searchParams?.type || "";
+  const searchedParams = await searchParams
+  const search = searchedParams?.search || "";
+  const limit = parseInt(searchedParams?.limit || "20", 10);
+  const type = searchedParams?.type || "";
 
   const typeResponse = await fetch(`https://pokeapi.co/api/v2/type`);
   const typeData = await typeResponse.json();

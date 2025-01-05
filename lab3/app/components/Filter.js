@@ -19,12 +19,12 @@ export default function Filter({ types }) {
         type="text"
         name="search"
         placeholder="Search Pokemon"
-        defaultValue={new URLSearchParams(window.location.search).get("search") || ""}
+        defaultValue={typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("search") || "" : ""}
         onKeyDown={handleKeyDown}
       />
       <select
         name="type"
-        defaultValue={new URLSearchParams(window.location.search).get("type") || ""}
+        defaultValue={typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("type") || "" : ""}        
         onChange={handleFilterChange}
       >
         <option value="">All Types</option>
@@ -39,7 +39,7 @@ export default function Filter({ types }) {
         name="limit"
         placeholder="Liczba wyświetlanych Pokemonów"
         min="1"
-        defaultValue={new URLSearchParams(window.location.search).get("limit") || "20"}
+        defaultValue={typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("limit") || "20" : "20"}        
         onKeyDown={handleKeyDown}
       />
     </div>
