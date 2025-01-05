@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+</head>
+<body>
+    <h1>Pokédex</h1>
+    <main id="app"></main>
+    <script type="text/babel" src="app.js"></script>
+    <script type="text/babel" src="components/PokemonDetails.js"></script>
+    <script type="text/babel" src="components/PokemonList.js"></script>
+    <script type="text/babel" src="components/PokemonSearcher.js"></script>
+
+    
+    <p>Choose your fighter</p>
+    <div class="content">
+        <div class="cardcontainer">
+            <p>mewtwo</p>
+            <div class="box">
+                <img src="mewtwo.png" alt="mew">
+                
+            </div> 
+            
+            <div class="card mew"></div>
+        </div>
+        <div class="cardcontainer" >
+            <p>charizard</p>
+            <div class="box">
+                <img src="charizard.png" alt="char">
+                
+            </div> 
+            
+            <div class="card char" ></div>
+        </div>
+        <div class="cardcontainer" >
+            <p>articuno</p>
+            <div class="box">
+                <img src="articuno.png" alt="art">
+                
+            </div> 
+            
+            <div class="card art" ></div>
+        </div>
+    </div>
+</body>
+</html>

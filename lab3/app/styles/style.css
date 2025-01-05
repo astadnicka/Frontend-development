@@ -1,0 +1,123 @@
+@font-face {
+  font-family: Pokemon;
+  src: url(Pokemon_Solid.ttf);
+}
+body {
+  margin: 0;
+  letter-spacing: 2px;
+  color: white;
+  background-image: url("galaxy5.jpg");
+  background-size: auto;
+  font-family: Pokemon;
+}
+body a {
+  color: white;
+}
+body nav {
+  height: 80px;
+  justify-items: center;
+  justify-content: space-around;
+  display: flex;
+  background: rgb(43, 32, 92);
+}
+body nav a {
+  color: white;
+  text-align: center;
+  line-height: 80px;
+}
+body nav h1 {
+  animation: rotate 5s linear infinite;
+  margin: 0;
+}
+body main {
+  width: 100%;
+  margin-top: 40px;
+}
+body main p {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+}
+body main #filter {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  margin: 40 0;
+}
+body main #filter * {
+  padding: 10px;
+  border: 10px solid rgb(43, 32, 92);
+}
+body main ul {
+  padding: 0;
+  width: 100%;
+}
+body main ul li {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 20px;
+}
+body main ul li * {
+  line-height: 100px;
+}
+body main ul li:hover {
+  background-color: rgba(83, 70, 70, 0.4);
+}
+body main #detailedPokemon {
+  margin: 0 auto;
+  width: 100%;
+}
+body main #detailedPokemon h2 {
+  text-align: center;
+}
+body main #detailedPokemon #img {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+body main #detailedPokemon #img img {
+  width: 300px;
+}
+body main #detailedPokemon #short {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+body main #detailedPokemon #short a {
+  text-align: center;
+}
+body main #detailedPokemon #buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+body main #details {
+  margin-bottom: 100px;
+}
+body main #details p {
+  font-size: 20px;
+}
+body #footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+}
+@keyframes rotate {
+  0% {
+    color: red;
+  }
+  25% {
+    color: orange;
+  }
+  50% {
+    color: yellow;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: red;
+  }
+}/*# sourceMappingURL=style.css.map */
