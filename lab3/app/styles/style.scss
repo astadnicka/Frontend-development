@@ -4,6 +4,23 @@
 }
 
 body {
+    button{
+        height: 50px;
+        border-radius :13px;
+        display: flex;
+        line-height: 40px;
+        justify-items: center;
+        justify-content: center;
+        margin: auto 0;
+        background: rgb(53, 41, 108);
+        color:white
+
+    }
+    button:hover{
+        background: rgb(75, 62, 132);
+        cursor: pointer;
+    }
+    
     a{
         color:white;
     }
@@ -14,6 +31,7 @@ body {
     background-image: url('galaxy5.jpg');
     background-size:auto;
     font-family: Pokemon;
+
     nav{
         height: 80px;
         justify-items: center;
@@ -104,6 +122,48 @@ body {
                 font-size: 20px;
             }
         }
+        #porownanie{
+            text-align: center;
+        }
+        #compare{
+            display:flex;
+        }
+        #favorites{
+            h1{
+                text-align: center;
+            }
+            ul{
+                font-size: 20px;
+
+           li{
+            display: flex;
+            height: 100px;
+            justify-items: center;
+
+            a{
+                line-height: 100%;
+                align-items: center;
+                display: flex;
+
+            }
+            button{
+                height: 50px;
+                border-radius :13px;
+                display: flex;
+                line-height: 40px;
+                justify-items: center;
+                justify-content: center;
+                margin: auto 0;
+                background: rgb(53, 41, 108);
+                color:white
+
+            }
+            button:hover{
+                background: rgb(75, 62, 132);
+
+            }
+           }
+        }}
        
     }
     #footer{
@@ -130,5 +190,6 @@ body {
             color:red
         }
     }
+   
    
 }

@@ -10,6 +10,21 @@ body {
   background-size: auto;
   font-family: Pokemon;
 }
+body button {
+  height: 50px;
+  border-radius: 13px;
+  display: flex;
+  line-height: 40px;
+  justify-items: center;
+  justify-content: center;
+  margin: auto 0;
+  background: rgb(53, 41, 108);
+  color: white;
+}
+body button:hover {
+  background: rgb(75, 62, 132);
+  cursor: pointer;
+}
 body a {
   color: white;
 }
@@ -98,6 +113,42 @@ body main #details {
 }
 body main #details p {
   font-size: 20px;
+}
+body main #porownanie {
+  text-align: center;
+}
+body main #compare {
+  display: flex;
+}
+body main #favorites h1 {
+  text-align: center;
+}
+body main #favorites ul {
+  font-size: 20px;
+}
+body main #favorites ul li {
+  display: flex;
+  height: 100px;
+  justify-items: center;
+}
+body main #favorites ul li a {
+  line-height: 100%;
+  align-items: center;
+  display: flex;
+}
+body main #favorites ul li button {
+  height: 50px;
+  border-radius: 13px;
+  display: flex;
+  line-height: 40px;
+  justify-items: center;
+  justify-content: center;
+  margin: auto 0;
+  background: rgb(53, 41, 108);
+  color: white;
+}
+body main #favorites ul li button:hover {
+  background: rgb(75, 62, 132);
 }
 body #footer {
   position: fixed;

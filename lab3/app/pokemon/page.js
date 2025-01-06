@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Filter from "../components/Filter";
 import PokemonList from "../components/PokemonList";
-// import Compare from "../components/Compare";
 
 export default function PokemonPage() {
   const [filters, setFilters] = useState({
@@ -82,7 +81,6 @@ export default function PokemonPage() {
     <div>
       <Filter types={types} onFiltersChange={handleFiltersChange} />
       {loading ? <p>Ładowanie...</p> : <PokemonList pokemons={pokemons} />}
-      {/* <Compare />  */}
     </div>
   );
 }

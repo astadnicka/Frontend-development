@@ -5,6 +5,7 @@ export default function Navigation() {
         <a href="/"> Strona główna</a>
         <a href="/pokemon">Lista Pokemonów</a>
         <a href="/favorites">Twoje ulubione</a>
+        <a href="/compare">Porównaj</a>
       </nav>
     );
 }

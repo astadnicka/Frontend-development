@@ -17,7 +17,6 @@ export default async function PokemonDetailsPage({ params }) {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
 
     if (!response.ok) {
-      // Jeśli API zwraca błąd (np. 404), renderujemy stronę z komunikatem
       return (
         <div>
           <h1>Pokémon not found</h1>
@@ -29,7 +28,6 @@ export default async function PokemonDetailsPage({ params }) {
     const pokemon = await response.json();
     return <PokemonDetails pokemon={pokemon} />;
   } catch (error) {
-    // Obsługa innych błędów (np. problem z siecią)
     return (
       <div>
         <h1>Error</h1>
