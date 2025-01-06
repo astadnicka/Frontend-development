@@ -15,7 +15,6 @@ function addFavorite(pokemon) {
   window.location.reload();
 }
 
-//zabije sieeeee 
 function removeFavorite(pokemon) {
   let favorites = getFavorites();
   favorites = favorites.filter((fav) => fav !== pokemon);

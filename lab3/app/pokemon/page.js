@@ -1,49 +1,88 @@
-import PokemonList from "../components/PokemonList";
+"use client";
+
+import { useEffect, useState } from "react";
 import Filter from "../components/Filter";
+import PokemonList from "../components/PokemonList";
+// import Compare from "../components/Compare";
 
-export default async function PokemonPage({ searchParams }) {
-  const searchedParams = await searchParams
-  const search = searchedParams?.search || "";
-  const limit = parseInt(searchedParams?.limit || "20", 10);
-  const type = searchedParams?.type || "";
+export default function PokemonPage() {
+  const [filters, setFilters] = useState({
+    search: "",
+    type: "",
+    limit: 20,
+  });
 
-  const typeResponse = await fetch(`https://pokeapi.co/api/v2/type`);
-  const typeData = await typeResponse.json();
+  const [pokemons, setPokemons] = useState([]);
+  const [types, setTypes] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  let allPokemons = [];
+  const fetchTypes = async () => {
+    try {
+      const typeResponse = await fetch("https://pokeapi.co/api/v2/type");
+      const typeData = await typeResponse.json();
+      setTypes(typeData.results);
+    } catch (error) {
+      console.error("Błąd podczas pobierania typów:", error);
+    }
+  };
 
-  const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=1500`);
-  const data = await response.json();
-  allPokemons = data.results;
+  const fetchPokemons = async () => {
+    setLoading(true);
+    try {
+      const { search, type, limit } = filters;
 
-  let filteredPokemons = [];
+      const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1500");
+      const data = await response.json();
+      const allPokemons = data.results;
 
-  if (type) {
-    const typeDetailsResponse = await fetch(`https://pokeapi.co/api/v2/type/${type}`);
-    const typeDetailsData = await typeDetailsResponse.json();
-    filteredPokemons = typeDetailsData.pokemon.map(p => p.pokemon);
-  } else {
-    filteredPokemons = allPokemons;
-  }
+      let filteredPokemons = [];
 
-  const searchFilteredPokemons = filteredPokemons.filter(pokemon =>
-    pokemon.name.toLowerCase().includes(search.toLowerCase())
-  );
+      if (type) {
+        const typeDetailsResponse = await fetch(`https://pokeapi.co/api/v2/type/${type}`);
+        const typeDetailsData = await typeDetailsResponse.json();
+        filteredPokemons = typeDetailsData.pokemon.map((p) => p.pokemon);
+      } else {
+        filteredPokemons = allPokemons;
+      }
 
-  const limitedPokemons = searchFilteredPokemons.slice(0, limit);
+      const searchFilteredPokemons = filteredPokemons.filter((pokemon) =>
+        pokemon.name.toLowerCase().includes(search.toLowerCase())
+      );
 
-  const detailedPokemons = await Promise.all(
-    limitedPokemons.map(async (pokemon) => {
-      const pokemonDetails = await fetch(pokemon.url);
-      const pokemonData = await pokemonDetails.json();
-      return pokemonData;
-    })
-  );
+      const limitedPokemons = searchFilteredPokemons.slice(0, limit);
+
+      const detailedPokemons = await Promise.all(
+        limitedPokemons.map(async (pokemon) => {
+          const pokemonDetails = await fetch(pokemon.url);
+          return pokemonDetails.json();
+        })
+      );
+
+      setPokemons(detailedPokemons);
+    } catch (error) {
+      console.error("Błąd podczas pobierania Pokemonów:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchTypes();
+  }, []);
+
+  useEffect(() => {
+    fetchPokemons();
+  }, [filters]);
+
+  const handleFiltersChange = (newFilters) => {
+    setFilters((prev) => ({ ...prev, ...newFilters }));
+  };
 
   return (
-    <>
-      <Filter types={typeData.results} />
-      <PokemonList pokemons={detailedPokemons} />
-    </>
+    <div>
+      <Filter types={types} onFiltersChange={handleFiltersChange} />
+      {loading ? <p>Ładowanie...</p> : <PokemonList pokemons={pokemons} />}
+      {/* <Compare />  */}
+    </div>
   );
 }
