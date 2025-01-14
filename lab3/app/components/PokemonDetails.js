@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import NoteList from "./NoteList";
 
 function getComparisonList() {
   if (typeof window !== "undefined") {
@@ -47,6 +48,8 @@ export default function PokemonDetails({ pokemon }) {
   const [favorites, setFavorites] = useState([]);
   const [showDetails, setShowDetails] = useState(false);
   const [comparison, setComparison] = useState([]);
+  const [refreshNotes, setRefreshNotes] = useState(false);
+  const handleRefreshNotes = () => setRefreshNotes((prev) => !prev);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -114,6 +117,8 @@ export default function PokemonDetails({ pokemon }) {
           <p>Zdolności: {pokemon.abilities.map((ability) => ability.ability.name).join(", ")}</p>
         </div>
       )}
+      <NoteList pokemonId={pokemon.id} refreshNotes={refreshNotes} onEditNote={handleRefreshNotes} />
+
     </main>
   );
 }
